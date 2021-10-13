@@ -28,6 +28,9 @@ function btnHit(e){
     let myCal=myOutput.innerText;
     if(myCal=="0"){
         myCal="";
+        if(myOper.includes(myValue)||myValue=="="){
+            myCal=0
+        }
     }
     if(myValue=="="){
         
@@ -51,13 +54,13 @@ function btnHit(e){
        
     }}
     myCal=myCal+myValue;
-    if(myValue=="C"){
-            myCal=0;
-        }
+    
         myCal=myCal.replace('=','')
 console.log(myCal)
 console.log(typeof(myCal))
-
+if(myValue=="C"){
+            myCal=0;
+        }
     myOutput.innerText=myCal;
 
 }
